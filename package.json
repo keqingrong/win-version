@@ -1,0 +1,21 @@
+{
+  "name": "win-version",
+  "version": "0.0.0",
+  "description": "Get the version information of a Windows OS",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "version",
+    "windows"
+  ],
+  "author": "Qingrong Ke <keqingrong1992@gmail.com> (https://keqingrong.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
