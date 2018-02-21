@@ -10,7 +10,7 @@ const getWinOSRelease = () => {
     // "\r\nMicrosoft Windows [Version 10.0.16299.214]\r\n" => "10.0.16299.214"
     return execSync('ver', {
       encoding: 'utf-8'
-    }).replace(/\s|\[|\]|[A-Za-z]/g, '');
+    }).replace(/[^\d\.\-]/g, '');
   } catch (err) {
     return os.release();
   }
