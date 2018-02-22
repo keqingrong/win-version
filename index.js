@@ -22,6 +22,8 @@ const getWinOSRelease = () => {
 // https://en.wikipedia.org/wiki/Windows_10
 // [build number, version number]
 const releaseInfo = new Map([
+  [17604, 1809], // Redstone 5
+  [17101, 1803], // Redstone 4
   [16299, 1709], // Redstone 3, Fall Creators Update
   [15254, 1709], // * Windows 10 Mobile
   [15063, 1703], // Redstone 2, Creators Update
