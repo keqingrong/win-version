@@ -11,6 +11,7 @@
     "test": "ava"
   },
   "keywords": [
+    "release",
     "version",
     "windows"
   ],
@@ -18,5 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.25.0"
+  },
+  "dependencies": {
+    "win-release-id": "^0.0.1"
   }
 }
