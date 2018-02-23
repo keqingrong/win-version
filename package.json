@@ -12,6 +12,7 @@
   },
   "keywords": [
     "release",
+    "release-id",
     "version",
     "windows"
   ],
@@ -21,6 +22,6 @@
     "ava": "^0.25.0"
   },
   "dependencies": {
-    "win-release-id": "^0.0.2"
+    "win-release-id": "^0.1.0"
   }
 }

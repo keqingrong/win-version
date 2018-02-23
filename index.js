@@ -5,21 +5,6 @@ const {
 const os = require('os');
 const winReleaseId = require('win-release-id');
 
-// Reference:
-// https://technet.microsoft.com/en-us/windows/release-info.aspx
-// http://windows.microsoft.com/en-us/windows-10/update-history-windows-10
-// https://en.wikipedia.org/wiki/Windows_10
-// [buildNumber, releaseId]
-const releaseInfo = new Map([
-  [17604, 1809], // Redstone 5
-  [17101, 1803], // Redstone 4
-  [16299, 1709], // Redstone 3, Fall Creators Update
-  [15063, 1703], // Redstone 2, Creators Update
-  [14393, 1607], // Redstone 1, Anniversary Update
-  [10586, 1511], // Threshold 2, November Update
-  [10240, 1507] // Threshold 1
-]);
-
 const getWinOSRelease = () => {
   try {
     // Reference: https://en.wikipedia.org/wiki/Ver_(command)
@@ -40,7 +25,7 @@ const getWinVersion = (release) => {
   const buildNumber = parseInt(osRelease[2], 10);
   const revision = parseInt(osRelease[3], 10) || 0;
   const osBuild = parseFloat(`${buildNumber}.${revision}`);
-  const releaseId = releaseInfo.get(buildNumber) || winReleaseId();
+  const releaseId = winReleaseId(release);
 
   return {
     major: majorVersion,
