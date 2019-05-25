@@ -19,9 +19,9 @@
   "author": "Qingrong Ke <keqingrong1992@gmail.com> (https://keqingrong.github.io/)",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.25.0"
+    "ava": "^1.4.1"
   },
   "dependencies": {
-    "win-release-id": "^0.1.0"
+    "win-release-id": "^1.0.0"
   }
 }
