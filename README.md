@@ -24,6 +24,15 @@ winVersion();
 //   osBuild: 16299.214,
 //   version: 1709 }
 
+winVersion('10.0.18362.267');
+// => { major: 10,
+//   minor: 0,
+//   build: 18362,
+//   releaseId: 1903,
+//   revision: 267,
+//   osBuild: 18362.267,
+//   version: 1903 }
+
 winVersion('6.1.7601');
 // => { major: 6,
 //   minor: 1,
