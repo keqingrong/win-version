@@ -17,6 +17,31 @@ const getWinOSRelease = () => {
   }
 }
 
+const getDisplayVersionWithCmd = () => {
+  const cmd = 'reg query "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion" /v "DisplayVersion"';
+  try {
+    // "    DisplayVersion    REG_SZ    20H2" => "20H2"
+    const output = execSync(cmd, {
+      encoding: 'utf-8'
+    }).match(/(?<=DisplayVersion\s*REG_SZ\s*)(\w+)/);
+    return Array.isArray(output) ? output[0] : 'N/A';
+  } catch (err) {
+    return 'N/A';
+  }
+}
+
+const getDisplayVersion = (releaseId) => {
+  if (releaseId > 0) {
+    if (releaseId < 2009) {
+      return releaseId;
+    } else {
+      return getDisplayVersionWithCmd();
+    }
+  } else {
+    return 'N/A';
+  }
+}
+
 const getWinVersion = (release) => {
   // Windows version form: `<major version>.<minor version>.<build number>.<revision>`
   const osRelease = (release || getWinOSRelease()).split('.');
@@ -26,6 +51,7 @@ const getWinVersion = (release) => {
   const revision = parseInt(osRelease[3], 10) || 0;
   const osBuild = parseFloat(`${buildNumber}.${revision}`);
   const releaseId = winReleaseId(release);
+  const displayVersion = getDisplayVersion(releaseId);
 
   return {
     major: majorVersion,
@@ -34,7 +60,7 @@ const getWinVersion = (release) => {
     releaseId: releaseId,
     revision: revision,
     osBuild: osBuild,
-    version: releaseId > 0 ? releaseId : 'N/A'
+    version: displayVersion
   }
 };
 

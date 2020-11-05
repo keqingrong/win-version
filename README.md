@@ -18,6 +18,15 @@ const winVersion = require('win-version');
 winVersion();
 // => { major: 10,
 //   minor: 0,
+//   build: 19042,
+//   releaseId: 2009,
+//   revision: 572,
+//   osBuild: 19042.572,
+//   version: '20H2' }
+
+winVersion();
+// => { major: 10,
+//   minor: 0,
 //   build: 16299,
 //   releaseId: 1709,
 //   revision: 214,

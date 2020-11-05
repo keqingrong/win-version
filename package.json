@@ -22,6 +22,6 @@
     "ava": "^1.4.1"
   },
   "dependencies": {
-    "win-release-id": "^1.0.1"
+    "win-release-id": "^1.0.4"
   }
 }
