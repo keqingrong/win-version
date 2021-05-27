@@ -1,8 +1,6 @@
 import test from 'ava';
 import winVersion from '.';
 
-console.log(winVersion())
-
 test('Windows 7', t => {
   t.deepEqual(winVersion('6.1.7601'), {
     major: 6,
